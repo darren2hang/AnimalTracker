@@ -11,4 +11,4 @@ Framework to load the video created by David Dobervich NOT included
 
 Main2 reads a csv file that contains an animal’s positions and loads the data into a DataSet object. The DataSet API can then be used to tell the user about the animal’s average speed, maximum speed, total time and time intervals spent in regions of interest, and total distance traveled.
 
-![Image of Statistics Data](AnimalTrackerStatistics.jpg)
+![Image of DataSet Statistics](DataSetStatistics.jpg)
