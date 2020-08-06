@@ -156,15 +156,12 @@ public class DataSet {
         if (i >= position.size()) return 0;
         if (i - 1 >= 0) {
             if (i + 1 < position.size()) {
-                //go from i-1 to i+1
                 return (getDistanceBetween(position.get(i - 1).getRow(), position.get(i - 1).getCol(), position.get(i + 1).getRow(), position.get(i + 1).getCol()) / (convertFramesIntoTime(2)));
             } else {
-                //go from i-1 to i
                 return (getDistanceBetween(position.get(i - 1).getRow(), position.get(i - 1).getCol(), position.get(i).getRow(), position.get(i).getCol()) / (convertFramesIntoTime(1)));
             }
         } else {
             if (i + 1 < position.size()) {
-                //go from i to i+1
                 return (getDistanceBetween(position.get(i).getRow(), position.get(i).getCol(), position.get(i + 1).getRow(), position.get(i + 1).getCol()) / (convertFramesIntoTime(1)));
             } else {
                 return 0;
@@ -185,11 +182,7 @@ public class DataSet {
         }
         return maxSpeed;
     }
-//    public void displaySpeeds(){
-//        for (int i = 0; i < 4500; i++) {
-//            System.out.println(getSpeedAtTime(convertFramesIntoTime(i)));
-//        }
-//    }
+
     public double getDistanceTraveledDuring(double time1, double time2) {
         int i = Math.max(0,convertTimeIntoFrame(time1));
         int f = Math.min(position.size()-1,convertTimeIntoFrame(time2));
@@ -217,14 +210,10 @@ public class DataSet {
     public void writeDataFromMouseTrackerToFile(String filePath) {
         try (
                 PrintWriter p = new PrintWriter(new BufferedWriter(new FileWriter(filePath)));) {
-            //p.println("Time(s)\tPosition(x, y)\tVelocity(cm/s)");
-            //p.println();
-            // DecimalFormat df = new DecimalFormat("###.##");
+   
             for (int i = 0; i < position.size(); i++) {
                 Point point = position.get(i);
-                //p.print(convertFramesIntoTime(i)+"\t");
                 p.println(point.getCol() + "," + point.getRow());
-                // p.println(getSpeedAtTime(convertFramesIntoTime(i)));
             }
         } catch (IOException error) {
             System.err.println("There was a problem writing to the file: " + filePath);
