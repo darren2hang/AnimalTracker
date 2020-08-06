@@ -8,7 +8,6 @@ public class ConvolutionBoxBlur implements PixelFilter {
     private static final short[][] PREWITT_EDGE = {{-1, -1, -1}, {-1, 8, -1}, {-1, -1, -1}};
 
     public ConvolutionBoxBlur() {
-        // String input = JOptionPane.showInputDialog("Which kernel filter do you want to use?");
     }
 
     public DImage processImage(DImage img) {
