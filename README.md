@@ -7,15 +7,6 @@ MouseFilter also writes the positions of the animal to a csv file.
 
 ![Image of Mouse Filter](AnimalTrackerDemo2.jpg)
 
-Framework to load the video was created by David Dobervich.
+Framework to load the video created by David Dobervich NOT included
 
 Main2 reads a csv file that contains an animal’s positions and loads the data into a DataSet object. The DataSet API can then be used to tell the user about the animal’s average speed, maximum speed, total time and time intervals spent in regions of interest, and total distance traveled.
-
-###How to Use the MouseTracker Filter
-- Run Main
-- Select “load mp4 or image from disk” option
-- Select desired video from your disk
-- Once the video loads, press “f” on your keyboard
-- Type in “MouseTracker”
-- The data will be outputted to a csv file currently named ZHANG_DARREN.csv in the data folder
-- Press “p” to pause the video at a given frame
