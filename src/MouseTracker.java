@@ -37,7 +37,6 @@ public class MouseTracker implements PixelFilter {
                 }
             }
             img.setPixels(grid);
-            //img = d.processImage(img);
             img = blur.processImage(img);
             img = threshold.processImage(img);
 
@@ -77,19 +76,9 @@ public class MouseTracker implements PixelFilter {
             Point p = new Point(mouseCenterRow,mouseCenterCol);
             trail.add(p);
             dataset.addPoint(p);
-//            System.out.println(dataset.getDistanceTraveledDuring(0,15));
-
-            // dataset.add(trail);
-            /*
-        1).  Filter the image to isolate mouse
-        2).  Extract information about the mouse
-        3).  Load information into dataset.
-
-         */
-
-        } else if (frameCount == MAX_FRAMES){     // If last frame, output CSV data
-            displayInfo(dataset);           // display info if you wish
-            outputCSVData(dataset);         // output data to csv file, if you wish
+        } else if (frameCount == MAX_FRAMES){    
+            displayInfo(dataset);           
+            outputCSVData(dataset);         
         }
 
         return img;
